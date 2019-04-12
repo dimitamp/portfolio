@@ -1,0 +1,76 @@
+.projects-page {
+  height: 100vh;
+  background-color: #333;
+}
+.projects-page main {
+  display: flex;
+  flex: 1 1;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  position: relative;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 70%;
+  flex-wrap: wrap;
+}
+.project-card {
+  margin: 1rem;
+  width: 22%;
+  height: 70%;
+  background-color: #999;
+  border-radius: 1.5rem;
+}
+.project-skills-wrapper {
+  height: 68%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2%;
+}
+.project-skill-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  height: 46%;
+  width: 28%;
+  margin: 2%;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+.project-description {
+  display: flex;
+  align-items: center;
+  color: #333;
+  justify-content: center;
+  flex: 1 1;
+  margin: 4%;
+  height: 22%;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 1050px) {
+  .project-card {
+    width: 28%;
+    height: 38%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .project-card {
+    width: 40%;
+  }
+}
+@media only screen and (orientation: landscape) {
+  .about-page main {
+    flex-wrap: nowrap;
+  }
+  .profile-photo {
+    padding: 0;
+    padding-right: 3rem;
+  }
+  .about-section {
+    padding: 0;
+  }
+}
