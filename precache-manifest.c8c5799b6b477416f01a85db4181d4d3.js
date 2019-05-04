@@ -1,5 +1,9 @@
 self.__precacheManifest = [
   {
+    "revision": "19d7bfd13608716efb7cdcfa764d3eb0",
+    "url": "/static/media/redux.19d7bfd1.png"
+  },
+  {
     "revision": "a51267c4e6d4c0467566fda356fca620",
     "url": "/static/media/profile_photo.a51267c4.jpg"
   },
@@ -16,19 +20,19 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.229c360f.js"
   },
   {
-    "revision": "60c9ea16cd1d6d0a1671",
-    "url": "/static/js/main.60c9ea16.chunk.js"
+    "revision": "ff1b05ad98908b539bdc",
+    "url": "/static/js/main.ff1b05ad.chunk.js"
   },
   {
     "revision": "d76b3ede176215d57be3",
     "url": "/static/js/1.d76b3ede.chunk.js"
   },
   {
-    "revision": "60c9ea16cd1d6d0a1671",
+    "revision": "ff1b05ad98908b539bdc",
     "url": "/static/css/main.aa314c1b.chunk.css"
   },
   {
-    "revision": "37f073670a132d85a45e1ca680e7af40",
+    "revision": "9be608a1283fcb45fefc903936c40a75",
     "url": "/index.html"
   }
 ];
