@@ -7,7 +7,9 @@ import scrollToElement from "scroll-to-element";
 class LandingPage extends Component {
   state = {
     specialTheme: false,
-    anchorEl: null
+    anchorEl: null,
+    teasing: false,
+    talking: false
   };
   scrollToAbout = () => {
     const elem = document.querySelector(".about-page");
@@ -72,14 +74,68 @@ class LandingPage extends Component {
     }
     this.setState({ anchorEl: null });
   };
+  getNewPosition = () => {
+    var h = window.innerHeight - 30;
+    var w = window.innerWidth - 30;
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    return { top: nh + "px", left: nw + "px" };
+  };
+  getOldPosition = () => {
+    const elem = document.getElementById("lamouchefatale");
+    var oldq = elem.getBoundingClientRect();
+    return { top: oldq.top + "px", left: oldq.left + "px" };
+  };
+  animateFly = async () => {
+    if (!this.state.talking) {
+      this.setState({ teasing: false });
+      const elem = document.getElementById("lamouchefatale");
+      let values = [this.getOldPosition()];
+      for (let i = 0; i <= 5; i++) {
+        values.push(this.getNewPosition());
+      }
+      elem.animate(values, {
+        duration: 5000
+      });
+    }
+  };
+  teaseFly = () => {
+    if (!this.state.teasing) {
+      this.setState({ teasing: true, talking: true });
+      setTimeout(() => {
+        this.setState({ talking: false });
+      }, 1500);
+    }
+  };
+  getRandomText = () => {
+    const texts = [
+      "You don't want to mess with La Mouche Fatale, trust me...",
+      "Do you want to pick a fight?",
+      "Hey, don't tease me...",
+      "You've angered the beast..."
+    ];
+    return texts[Math.floor(Math.random() * texts.length)];
+  };
   render() {
     return (
       <div className="landing-page">
         {this.renderSpecialTheme()}
         <nav>
           <div className="brand">
-            <div className="brand-title">DT |</div>
-            <i className="fas fa-code" />
+            <div className="brand-title"> LMF | </div>
+            <img
+              className="hvr-wobble-vertical"
+              src={require("../images/fly.png")}
+              alt="fly icon"
+              id="lamouchefatale"
+              onClick={this.state.teasing ? this.animateFly : this.teaseFly}
+            />
+            <div
+              className="talkingBubble"
+              style={this.state.talking ? {} : { display: "none" }}
+            >
+              {this.getRandomText()}
+            </div>
           </div>
           <div className="menu">
             <div className="menu-item" onClick={this.scrollToHome}>
@@ -179,7 +235,7 @@ class LandingPage extends Component {
             </div>
           </div>
         </main>
-        <div className="changeTheme">
+        {/* <div className="changeTheme">
           <div
             className="changeThemeText"
             onClick={this.toggleSpecialTheme}
@@ -187,7 +243,7 @@ class LandingPage extends Component {
           >
             Special Theme
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

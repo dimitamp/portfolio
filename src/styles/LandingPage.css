@@ -27,8 +27,12 @@ nav .brand {
   align-items: center;
 }
 
-.brand i {
+.brand img {
   padding: 0 0.5rem;
+  position: relative;
+  width: 3.5rem;
+  height: 2.5rem;
+  cursor: pointer;
 }
 nav .menu {
   margin-right: 1rem;
@@ -67,6 +71,7 @@ nav {
   font-weight: 700;
   line-height: 4rem;
   padding: 2rem 0;
+  margin-top: 2rem;
 }
 .intro-skills {
   font-size: 2.5rem;
@@ -131,6 +136,36 @@ nav {
   cursor: pointer;
   font-size: 1.8rem;
 }
+
+.talkingBubble {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0.6rem;
+  width: 10rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  font-size: 0.8rem;
+}
+
+.talkingBubble:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-right-color: #ffffff;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -10.5px;
+  margin-left: -19px;
+}
 @-webkit-keyframes hvr-wobble-vertical {
   16.65% {
     -webkit-transform: translateY(8px);
@@ -183,6 +218,7 @@ nav {
     transform: translateY(0);
   }
 }
+
 /* vertical wobble */
 .hvr-wobble-vertical {
   display: inline-block;

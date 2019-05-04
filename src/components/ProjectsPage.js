@@ -8,14 +8,19 @@ class ProjectsPage extends Component {
         <main>
           <div className="project-card hvr-wobble-vertical">
             <div className="project-skills-wrapper">
-              <div className="project-skill-icon">CSS</div>
-              <div className="project-skill-icon">JS</div>
-              <div className="project-skill-icon">NODE</div>
-              <div className="project-skill-icon">REACT</div>
-              <div className="project-skill-icon">MONGO</div>
+              <i className="fab fa-css3-alt project-skill-icon" />
+              <i className="fab fa-node project-skill-icon" />
+              <i className="fab fa-react project-skill-icon" />
+              <div className="project-skill-icon">
+                <img
+                  className="project-skill-image"
+                  src={require("../images/mongoIcon.png")}
+                  alt="mongo icon"
+                />
+              </div>
             </div>
             <a
-              href="http://83.212.107.194:4000"
+              href="https://www.families-share.eu/"
               className="project-description"
             >
               FAMILIES SHARE
@@ -23,33 +28,51 @@ class ProjectsPage extends Component {
           </div>
           <div className="project-card hvr-wobble-vertical">
             <div className="project-skills-wrapper">
-              <div className="project-skill-icon">JS</div>
-              <div className="project-skill-icon">CSS</div>
-              <div className="project-skill-icon">REACT</div>
+              <i className="fab fa-react project-skill-icon" />
+              <i className="fab fa-css3-alt project-skill-icon" />
+              <i className="fab fa-node project-skill-icon" />
             </div>
-            <a
-              href="https://github.com/dimitamp/portfolio"
-              className="project-description"
-            >
-              PORTFOLIO
-            </a>
+            <div className="project-description">PORTFOLIO</div>
           </div>
           <div className="project-card hvr-wobble-vertical">
             <div className="project-skills-wrapper">
-              <div className="project-skill-icon">CSS</div>
-              <div className="project-skill-icon">JS</div>
-              <div className="project-skill-icon">HTML</div>
+              <i className="fab fa-css3-alt project-skill-icon" />
+              <i className="fab fa-js project-skill-icon" />
+              <i className="fab fa-html5 project-skill-icon" />
             </div>
             <div className="project-description">UX BOT</div>
           </div>
           <div className="project-card hvr-wobble-vertical">
             <div className="project-skills-wrapper">
-              <div className="project-skill-icon">NLP</div>
-              <div className="project-skill-icon">WIT.AI</div>
-              <div className="project-skill-icon">CHATBOT</div>
-              <div className="project-skill-icon">NODE</div>
+              <div className="project-skill-icon">
+                <img
+                  className="project-skill-image"
+                  src={require("../images/nlpIcon.png")}
+                  alt="nlp icon"
+                />
+              </div>
+              <i className="fas fa-robot project-skill-icon" />
+              <i className="fab fa-node project-skill-icon" />
             </div>
             <div className="project-description">UX EXTENSION</div>
+          </div>
+          <div className="project-card hvr-wobble-vertical">
+            <div className="project-skills-wrapper">
+              <div className="project-skill-icon">
+                <img
+                  className="project-skill-image"
+                  src={require("../images/redux.png")}
+                  alt="nlp icon"
+                />
+              </div>
+              <i className="fas fa-react project-skill-icon" />
+            </div>
+            <a
+              href="https://github.com/dimitamp/PMH"
+              className="project-description"
+            >
+              PIMP MY HOME
+            </a>
           </div>
         </main>
       </div>

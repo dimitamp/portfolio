@@ -24,7 +24,7 @@
 }
 
 .about-section {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .profile-photo img {
   width: 25rem;
@@ -45,15 +45,13 @@
   .about-section {
     padding-left: 0;
     padding-bottom: 7rem;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .about-page main {
     padding: 0 3rem;
-  }
-  .about-section {
-    font-size: 1.8rem;
   }
 }
 @media only screen and (max-width: 600px) {
