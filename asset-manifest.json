@@ -1,17 +1,19 @@
 {
-  "main.css": "/static/css/main.86bddf14.chunk.css",
-  "main.js": "/static/js/main.dab51c96.chunk.js",
-  "main.js.map": "/static/js/main.dab51c96.chunk.js.map",
-  "static/js/1.d76b3ede.chunk.js": "/static/js/1.d76b3ede.chunk.js",
-  "static/js/1.d76b3ede.chunk.js.map": "/static/js/1.d76b3ede.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/christmashat.png": "/static/media/christmashat.46509ade.png",
-  "static/media/profile_photo.jpg": "/static/media/profile_photo.a51267c4.jpg",
-  "static/media/redux.png": "/static/media/redux.19d7bfd1.png",
-  "static/media/fly.png": "/static/media/fly.2be31122.png",
-  "static/css/main.86bddf14.chunk.css.map": "/static/css/main.86bddf14.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.2d0ce548bd5e0fbc29a81a490015608f.js": "/precache-manifest.2d0ce548bd5e0fbc29a81a490015608f.js",
-  "service-worker.js": "/service-worker.js"
+  "files": {
+    "main.css": "/static/css/main.67970392.chunk.css",
+    "main.js": "/static/js/main.59fe5ee0.chunk.js",
+    "main.js.map": "/static/js/main.59fe5ee0.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.ff5b94b3.chunk.js": "/static/js/2.ff5b94b3.chunk.js",
+    "static/js/2.ff5b94b3.chunk.js.map": "/static/js/2.ff5b94b3.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.46021719f2d46a726c4b32659b026a2f.js": "/precache-manifest.46021719f2d46a726c4b32659b026a2f.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.67970392.chunk.css.map": "/static/css/main.67970392.chunk.css.map",
+    "static/media/christmashat.png": "/static/media/christmashat.46509ade.png",
+    "static/media/fly.png": "/static/media/fly.2be31122.png",
+    "static/media/profile_photo.jpg": "/static/media/profile_photo.a51267c4.jpg",
+    "static/media/redux.png": "/static/media/redux.19d7bfd1.png"
+  }
 }
