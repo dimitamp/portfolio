@@ -1,42 +1,41 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../styles/LandingPage.css";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import scrollToElement from "scroll-to-element";
 
-class LandingPage extends Component {
-  state = {
-    specialTheme: false,
-    anchorEl: null,
-    teasing: false,
-    talking: false
-  };
-  scrollToAbout = () => {
+const LandingPage = () => {
+  const [specialTheme, setSpecialTheme] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [teasing, setTeasing] = useState(false);
+  const [talking, setTalking] = useState(false);
+
+  const scrollToAbout = () => {
     const elem = document.querySelector(".about-page");
     scrollToElement(elem, {
       offset: 0,
       duration: 1500
     });
   };
-  scrollToHome = () => {
+  const scrollToHome = () => {
     const elem = document.querySelector(".landing-page");
     scrollToElement(elem, {
       offset: 0,
       duration: 1500
     });
   };
-  scrollToProjects = () => {
+  const scrollToProjects = () => {
     const elem = document.querySelector(".projects-page");
     scrollToElement(elem, {
       offset: 0,
       duration: 1500
     });
   };
-  toggleSpecialTheme = () => {
-    this.setState({ specialTheme: !this.state.specialTheme });
+  const toggleSpecialTheme = () => {
+    setSpecialTheme(!specialTheme);
   };
-  renderSpecialTheme = () => {
-    if (this.state.specialTheme) {
+  const renderSpecialTheme = () => {
+    if (specialTheme) {
       return (
         <div className="snowflakes" aria-hidden="true">
           <div className="snowflake snowflake-blue snowflake-big">❄</div>
@@ -53,61 +52,62 @@ class LandingPage extends Component {
       );
     }
   };
-  handleMenuOpen = event => {
-    this.setState({ anchorEl: event.currentTarget });
+  const handleMenuOpen = event => {
+    setAnchorEl(event.currentTarget);
   };
-  handleMenuClose = () => {
-    this.setState({ anchorEl: null });
+  const handleMenuClose = () => {
+    setAnchorEl(null);
   };
-  handleMenuItemClick = scrollTo => {
+  const handleMenuItemClick = scrollTo => {
     switch (scrollTo) {
       case "home":
-        this.scrollToHome();
+        scrollToHome();
         break;
       case "about":
-        this.scrollToAbout();
+        scrollToAbout();
         break;
       case "portfolio":
-        this.scrollToProjects();
+        scrollToProjects();
         break;
       default:
     }
-    this.setState({ anchorEl: null });
+    setAnchorEl(null);
   };
-  getNewPosition = () => {
+  const getNewPosition = () => {
     var h = window.innerHeight - 30;
     var w = window.innerWidth - 30;
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
     return { top: nh + "px", left: nw + "px" };
   };
-  getOldPosition = () => {
+  const getOldPosition = () => {
     const elem = document.getElementById("lamouchefatale");
     var oldq = elem.getBoundingClientRect();
     return { top: oldq.top + "px", left: oldq.left + "px" };
   };
-  animateFly = async () => {
-    if (!this.state.talking) {
-      this.setState({ teasing: false });
+  const animateFly = async () => {
+    if (!talking) {
+      setTeasing(false);
       const elem = document.getElementById("lamouchefatale");
-      let values = [this.getOldPosition()];
+      let values = [getOldPosition()];
       for (let i = 0; i <= 5; i++) {
-        values.push(this.getNewPosition());
+        values.push(getNewPosition());
       }
       elem.animate(values, {
         duration: 5000
       });
     }
   };
-  teaseFly = () => {
-    if (!this.state.teasing) {
-      this.setState({ teasing: true, talking: true });
+  const teaseFly = () => {
+    if (!teasing) {
+      setTeasing(true);
+      setTalking(true);
       setTimeout(() => {
-        this.setState({ talking: false });
+        setTalking(false);
       }, 1500);
     }
   };
-  getRandomText = () => {
+  const getRandomText = () => {
     const texts = [
       "You don't want to mess with La Mouche Fatale, trust me...",
       "Do you want to pick a fight?",
@@ -116,137 +116,141 @@ class LandingPage extends Component {
     ];
     return texts[Math.floor(Math.random() * texts.length)];
   };
-  render() {
-    return (
-      <div className="landing-page">
-        {this.renderSpecialTheme()}
-        <nav>
-          <div className="brand">
-            <div className="brand-title"> LMF | </div>
-            <img
-              className="hvr-wobble-vertical"
-              src={require("../images/fly.png")}
-              alt="fly icon"
-              id="lamouchefatale"
-              onClick={this.state.teasing ? this.animateFly : this.teaseFly}
-            />
-            <div
-              className="talkingBubble"
-              style={this.state.talking ? {} : { display: "none" }}
-            >
-              {this.getRandomText()}
-            </div>
-          </div>
-          <div className="menu">
-            <div className="menu-item" onClick={this.scrollToHome}>
-              Home
-            </div>
-            <div className="menu-item" onClick={this.scrollToAbout}>
-              About
-            </div>
-            <div className="menu-item" onClick={this.scrollToProjects}>
-              Portfolio
-            </div>
-            <i
-              className="fas fa-bars expandable-menu"
-              onClick={this.handleMenuOpen}
-            />
-            <Menu
-              anchorEl={this.state.anchorEl}
-              open={Boolean(this.state.anchorEl)}
-              onClose={this.handleMenuClose}
-            >
-              <MenuItem
-                key={"home"}
-                onClick={() => this.handleMenuItemClick("home")}
-              >
-                Home
-              </MenuItem>
-              <MenuItem
-                key={"about"}
-                onClick={() => this.handleMenuItemClick("about")}
-              >
-                About
-              </MenuItem>
-              <MenuItem
-                key={"portfolio"}
-                onClick={() => this.handleMenuItemClick("portfolio")}
-              >
-                Portfolio
-              </MenuItem>
-            </Menu>
-          </div>
-        </nav>
-        <main>
-          <div className="intro-wrapper">
-            <div className="intro-name">Hello I'm Dimitris</div>
-            <div className="intro-skills">
-              Full-Stack Developer | React Enthousiast
-            </div>
-            <div className="social-icons">
-              <a
-                href="https://github.com/dimitamp"
-                className="hvr-wobble-vertical"
-              >
-                <img
-                  style={this.state.specialTheme ? {} : { display: "none" }}
-                  className="github-hat"
-                  alt="christmas hat icon"
-                  src={require("../images/christmashat.png")}
-                />
-                <i className="fab fa-github" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/dimitrios-tampakis-538144175"
-                className="hvr-wobble-vertical"
-              >
-                <img
-                  style={this.state.specialTheme ? {} : { display: "none" }}
-                  className="linkedin-hat"
-                  alt="christmas hat icon"
-                  src={require("../images/christmashat.png")}
-                />
-                <i className="fab fa-linkedin" />
-              </a>
-              <a
-                href="https://www.instagram.com/lamouchefatale/"
-                className="hvr-wobble-vertical"
-              >
-                <img
-                  style={this.state.specialTheme ? {} : { display: "none" }}
-                  className="instagram-hat"
-                  alt="christmas hat icon"
-                  src={require("../images/christmashat.png")}
-                />
-                <i className="fab fa-instagram" />
-              </a>
-              <a
-                href="https://devpost.com/DimitriosTampakis?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
-                className="hvr-wobble-vertical"
-              >
-                <img
-                  style={this.state.specialTheme ? {} : { display: "none" }}
-                  className="dev-hat"
-                  alt="christmas hat icon"
-                  src={require("../images/christmashat.png")}
-                />
-                <i className="fab fa-dev" />
-              </a>
-            </div>
-          </div>
-        </main>
-        {/* <div className="changeTheme">
+  return (
+    <div className="landing-page">
+      {renderSpecialTheme()}
+      <nav>
+        <div className="brand">
+          <div className="brand-title"> LMF | </div>
+          <img
+            className="hvr-wobble-vertical"
+            src={require("../images/fly.png")}
+            alt="fly icon"
+            id="lamouchefatale"
+            onClick={teasing ? animateFly : teaseFly}
+          />
           <div
-            className="changeThemeText"
-            onClick={this.toggleSpecialTheme}
-            style={this.state.specialTheme ? { color: "red" } : {}}
+            className="talkingBubble"
+            style={talking ? {} : { display: "none" }}
           >
-            Special Theme
+            {getRandomText()}
           </div>
-        </div> */}
+        </div>
+        <div className="menu">
+          <div className="menu-item" onClick={scrollToHome}>
+            Home
+          </div>
+          <div className="menu-item" onClick={scrollToAbout}>
+            About
+          </div>
+          <div className="menu-item" onClick={scrollToProjects}>
+            Portfolio
+          </div>
+          <i className="fas fa-bars expandable-menu" onClick={handleMenuOpen} />
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem key={"home"} onClick={() => handleMenuItemClick("home")}>
+              Home
+            </MenuItem>
+            <MenuItem
+              key={"about"}
+              onClick={() => handleMenuItemClick("about")}
+            >
+              About
+            </MenuItem>
+            <MenuItem
+              key={"portfolio"}
+              onClick={() => handleMenuItemClick("portfolio")}
+            >
+              Portfolio
+            </MenuItem>
+          </Menu>
+        </div>
+      </nav>
+      <main>
+        <div className="intro-wrapper">
+          <div className="intro-name">Hello I'm Dimitris</div>
+          <div className="intro-skills">
+            Full-Stack Developer | React Enthousiast
+          </div>
+          <div className="social-icons">
+            <a
+              href="https://github.com/dimitamp"
+              className="hvr-wobble-vertical"
+            >
+              <img
+                style={specialTheme ? {} : { display: "none" }}
+                className="github-hat"
+                alt="christmas hat icon"
+                src={require("../images/christmashat.png")}
+              />
+              <i className="fab fa-github" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dimitrios-tampakis-538144175"
+              className="hvr-wobble-vertical"
+            >
+              <img
+                style={specialTheme ? {} : { display: "none" }}
+                className="linkedin-hat"
+                alt="christmas hat icon"
+                src={require("../images/christmashat.png")}
+              />
+              <i className="fab fa-linkedin" />
+            </a>
+            <a
+              href="https://www.instagram.com/lamouchefatale/"
+              className="hvr-wobble-vertical"
+            >
+              <img
+                style={specialTheme ? {} : { display: "none" }}
+                className="instagram-hat"
+                alt="christmas hat icon"
+                src={require("../images/christmashat.png")}
+              />
+              <i className="fab fa-instagram" />
+            </a>
+            <a
+              href="https://devpost.com/DimitriosTampakis?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+              className="hvr-wobble-vertical"
+            >
+              <img
+                style={specialTheme ? {} : { display: "none" }}
+                className="dev-hat"
+                alt="christmas hat icon"
+                src={require("../images/christmashat.png")}
+              />
+              <i className="fab fa-dev" />
+            </a>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1u2f0xInSDNkP00ArgEV3D7r6GLhYKS_F"
+              className="hvr-wobble-vertical"
+            >
+              <img
+                style={specialTheme ? {} : { display: "none" }}
+                className="instagram-hat"
+                alt="christmas hat icon"
+                src={require("../images/christmashat.png")}
+              />
+              <i className="fas fa-file" />
+            </a>
+          </div>
+        </div>
+      </main>
+      <div className="changeTheme">
+        <div
+          className="changeThemeText"
+          onClick={toggleSpecialTheme}
+          style={specialTheme ? { color: "red" } : {}}
+        >
+          Special Theme
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default LandingPage;

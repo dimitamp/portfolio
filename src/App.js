@@ -3,15 +3,18 @@ import "./App.css";
 import LandingPage from "./components/LandingPage";
 import AboutPage from "./components/AboutPage";
 import ProjectsPage from "./components/ProjectsPage";
+import { ThemeProvider } from "styled-components";
 
 class App extends Component {
   render() {
     return (
-      <div className="app">
-        <LandingPage />
-        <AboutPage />
-        <ProjectsPage />
-      </div>
+      <ThemeProvider theme={{ mode: "dark" }}>
+        <React.Fragment>
+          <LandingPage />
+          <AboutPage />
+          <ProjectsPage />
+        </React.Fragment>
+      </ThemeProvider>
     );
   }
 }
