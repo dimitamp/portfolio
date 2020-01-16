@@ -32,24 +32,6 @@ const ProjectsPage = () => {
       </div>
       <div className="project-card hvr-wobble-vertical">
         <div className="project-skills-wrapper">
-          <div className="project-skill-icon">
-            <img
-              className="project-skill-image"
-              src={require("../images/redux.png")}
-              alt="nlp icon"
-            />
-          </div>
-          <i className="fab fa-react project-skill-icon" />
-        </div>
-        <a
-          href="https://github.com/dimitamp/PMH"
-          className="project-description"
-        >
-          PIMP MY HOME
-        </a>
-      </div>
-      <div className="project-card hvr-wobble-vertical">
-        <div className="project-skills-wrapper">
           <i className="fab fa-css3-alt project-skill-icon" />
           <i className="fab fa-js project-skill-icon" />
           <i className="fab fa-html5 project-skill-icon" />
@@ -150,6 +132,60 @@ const ProjectsPage = () => {
           className="project-description"
         >
           SYTHES PLATFORM
+        </a>
+      </div>
+      <div className="project-card hvr-wobble-vertical">
+        <div className="project-skills-wrapper">
+          <div className="project-skill-icon">
+            <img
+              className="project-skill-image"
+              src={require("../images/redux.png")}
+              alt="redux icon"
+            />
+          </div>
+          <i className="fab fa-react project-skill-icon" />
+        </div>
+        <a
+          href="https://sirvotealot.netlify.com/"
+          className="project-description"
+        >
+          SIR VOTE-A-LOT
+        </a>
+      </div>
+      <div className="project-card hvr-wobble-vertical">
+        <div className="project-skills-wrapper">
+          <div className="project-skill-icon">
+            <img
+              className="project-skill-image"
+              src={require("../images/redux.png")}
+              alt="redux icon"
+            />
+          </div>
+          <i className="fab fa-react project-skill-icon" />
+        </div>
+        <a
+          href="https://surveydonkey.netlify.com/"
+          className="project-description"
+        >
+          SURVEY DONKEY
+        </a>
+      </div>
+      <div className="project-card hvr-wobble-vertical">
+        <div className="project-skills-wrapper">
+          <div className="project-skill-icon">
+            <img
+              className="project-skill-image"
+              src={require("../images/redux.png")}
+              alt="redux icon"
+            />
+          </div>
+          <i className="fab fa-react project-skill-icon" />
+        </div>
+        <a
+          href="https://randomstore.netlify.com/"
+          className="project-description"
+        >
+          RANDOM STORE
         </a>
       </div>
     </div>
