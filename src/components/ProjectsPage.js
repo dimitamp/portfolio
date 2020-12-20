@@ -24,7 +24,7 @@ const ProjectsPage = () => {
           </div>
         </div>
         <a
-          href="https://play.google.com/store/apps/details?id=com.vilabs.families_share_bologna"
+          href="https://play.google.com/store/apps/details?id=com.vilabs.families_share_development"
           className="project-description"
         >
           FAMILIES SHARE
@@ -128,7 +128,7 @@ const ProjectsPage = () => {
           </div>
         </div>
         <a
-          href="https://sities-platform.netlify.com"
+          href="https://platform.sities-project.gr"
           className="project-description"
         >
           SYTHES PLATFORM
@@ -179,13 +179,28 @@ const ProjectsPage = () => {
               alt="redux icon"
             />
           </div>
+          <div className="project-skill-icon">
+            <img
+              className="project-skill-image"
+              src={require("../images/graphqlIcon.png")}
+              alt="nlp icon"
+            />
+          </div>
+          <div className="project-skill-icon">
+            <img
+              className="project-skill-image"
+              src={require("../images/mongoIcon.png")}
+              alt="mongo icon"
+            />
+          </div>
           <i className="fab fa-react project-skill-icon" />
+          <i className="fab fa-node project-skill-icon" />
         </div>
         <a
-          href="https://randomstore.netlify.com/"
+          href="https://sessions-management.netlify.app/"
           className="project-description"
         >
-          RANDOM STORE
+          SESSIONS MANAGEMENT
         </a>
       </div>
     </div>

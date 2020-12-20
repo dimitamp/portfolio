@@ -12,19 +12,17 @@ const AboutPage = () => {
           <div className="studies">
             Dimitris holds a Diploma in Electrical and Computer Engineering,
             which he received from the Faculty of Engineering of Aristotle
-            University of Thessaloniki. He is currently working at Versatile
-            Innovations Labs (<a href="https://vilabs.eu/">ViLabs</a>) - a
-            company that is active in Research and Development of new ICT
-            Technologies - as a Full Stack Developer. He's also working at the
+            University of Thessaloniki. He is currently working at <a href="https://www.ixly.com/">Ixly</a> - a
+            company offering innovative solutions for HR - as a Full Stack Developer. He's also a member of the
             Information Processing Laboratory (
             <a href="https://issel.ee.auth.gr/">ISSEL</a>) of the Aristotle
-            University as a Full Stack Developer and Research Associate.
+            University.
           </div>
           <div className="current-work">
             His interests include Software Development, Machine Learning, Data
             Mining and Web Development. He is an enthusiastic learner and likes
             to participate in hackathons and online courses, seeing them as an
-            opportunity to hone his skills. He loves coding, especially in
+            opportunity to hone his skills. He loves coding in Python, Ruby and especially in
             Javascript. His favourite JavaScript technologies include: NodeJS,
             Express, MongoDB, React/React Native and Redux.
           </div>
